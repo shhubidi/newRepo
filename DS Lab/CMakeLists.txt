@@ -3,4 +3,5 @@ project(DS)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(linearsearch.cpp)
+add_executable(target_1 linearsearch.cpp)
+add_executable(target_2 binarysearch.cpp)
