@@ -77,7 +77,62 @@ void insert()
     newNode->next = temp->next;
     temp->next = newNode;
     }
-
+void deletenode()
+{
+    int p;
+    cout<<"Enter the postion:";
+    cin>>p;
+    if (head==NULL)
+    {
+        cout<<"Empty list";
+        return;
+    }
+    Node* temp = head;
+    if (p==1)
+    {
+        head = head->next;
+        delete temp;
+        return;
+    }
+    Node* prev = NULL;
+    for (int i =0;i<p-1 && temp!=NULL;i++)
+    {
+        prev = temp;
+        temp = temp->next;
+    }
+    if (temp==NULL)
+    {
+        cout<<"Position out of range";
+        return;
+    }
+    prev->next = temp->next;
+    delete temp;
+}
+void reverse()
+{
+    Node *prev = NULL,*next=NULL,*curr=head;
+    while (curr!=NULL)
+    {
+        next = curr->next;
+        curr->next = prev;
+        prev=curr;
+        curr = next;
+    }
+    head = prev;
+}
+Node* head2 = NULL:
+void concate()
+{
+    if (head==NULL)
+    {
+        head = head2;
+        return;
+    }
+    Node*temp = head;
+    while (temp->next = NULL)
+        temp= temp->next;
+    temp->next = head2;
+}
 int main()
 {
     int choice;
@@ -93,11 +148,15 @@ int main()
         case 2:
             insert();
             break;
+        case 4:
+            deletenode();
+            break;
         case 3:
             cout<<"Exiting...";
-            return 0;
+            break;
             default:
              cout<<"Invalid Choice Try again "<<endl;
         }
     }while (choice!=3);
+    return 0;
 }
