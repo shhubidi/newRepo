@@ -63,7 +63,7 @@ Node* deletenode(Node* root,int key)
     if (key<root->data)
         root->left = deletenode(root_>left,key);
     else if (key>root->data)
-        root->right = deletenode(root_>right,key)
+        root->right = deletenode(root_>right,key);
     else
     {
         if (root->left==NULL)
@@ -80,7 +80,7 @@ Node* deletenode(Node* root,int key)
         }
         Node* temp =findmin(root->right);
         root->data = temp->data;
-        root->right = deletenode(root->right,temp->data)
+        root->right = deletenode(root->right,temp->data);
     }
     return root;
 }
