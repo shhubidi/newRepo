@@ -4,4 +4,8 @@ Select i.Lname as Institute,b.Bname as Book from ILibrary i,Books b
     -> b.Price = (select Min(b.Price) from Books b, ILibrary i 
     -> where b.Lid=i.Lid and i.Lname = 'SIBMLib');
 
-2.
+2. Which library has the costliest book?
+Select i.Lname as Institute,b.Bname as Book from ILibrary i,Books b
+    -> where b.Lid = i.Lid and b.Price = (Select Max(Price) from Books);
+
+3. How many students from SIT issued the book?
