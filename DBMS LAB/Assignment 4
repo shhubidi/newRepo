@@ -1,0 +1,7 @@
+1. Find the cheapest book of SIBM library.
+Select i.Lname as Institute,b.Bname as Book from ILibrary i,Books b
+    -> where b.Lid = i.Lid and 
+    -> b.Price = (select Min(b.Price) from Books b, ILibrary i 
+    -> where b.Lid=i.Lid and i.Lname = 'SIBMLib');
+
+2.
