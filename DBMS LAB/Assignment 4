@@ -11,3 +11,12 @@ Select i.Lname as Institute,b.Bname as Book from ILibrary i,Books b
 3. How many students from SIT issued the book?
 Select d.Institute_name as Institute,Count(i.Memid) as NoofStudents from Issue i,Department d,Member m
     -> where m.Memid=i.Memid and m.Lid=d.Lid and d.Lid=i.Lid and d.Institute_name ='SIT';
+
+4.What is the average cost of books in SITMN
+Select d.Institute_name as Institute,Count(i.Memid) as NoofStudents from Issue i,Department d,Member m
+    -> where m.Memid=i.Memid and m.Lid=d.Lid and d.Lid=i.Lid and d.Institute_name ='SIT';
+
+5.What is the total cost of purchase made by SIT in the month of January to June?
+select sum(p.totalcost) as TotalCost,b.Bname as Book,i.Lname as Institute  from Purchase p,Books b,ILibrary i
+    -> where p.Bid =b.Bid and i.Lid =p.Lid and i.Lname='SITLib' and month(p.date) between 1 and 6 group by 2,3;
+
