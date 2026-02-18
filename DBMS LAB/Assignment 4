@@ -9,3 +9,5 @@ Select i.Lname as Institute,b.Bname as Book from ILibrary i,Books b
     -> where b.Lid = i.Lid and b.Price = (Select Max(Price) from Books);
 
 3. How many students from SIT issued the book?
+Select d.Institute_name as Institute,Count(i.Memid) as NoofStudents from Issue i,Department d,Member m
+    -> where m.Memid=i.Memid and m.Lid=d.Lid and d.Lid=i.Lid and d.Institute_name ='SIT';
