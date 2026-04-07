@@ -54,8 +54,8 @@ Basically — if it runs, compiles, or helps us graduate, it’s going in here.
 
 ---
 
-## 🎯 Goal  
-> Learn, build, and laugh through the chaos of college life.
+## 🎯 Goal (one ✅ was here 🤣) 
+> Learn, build, and laugh through the chaos of college life. YES
 
 ---
 
